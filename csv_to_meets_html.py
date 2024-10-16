@@ -29,6 +29,8 @@ def csv_to_html(csv_filename, output_folder):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{link_text}</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
@@ -51,6 +53,7 @@ def csv_to_html(csv_filename, output_folder):
 
 
     <section class="summary" id = "summary">
+      <h2>Race Summary</h2>
       {summary_text}
     </section>
 """
@@ -100,7 +103,7 @@ def csv_to_html(csv_filename, output_folder):
     <dt>Time</dt><dd>{time}</dd>
     <dt>Grade</dt><dd>{grade}</dd>
 </dl>
-</section>
+</div>
 """
 
         html_content += """</section>\n
@@ -119,7 +122,7 @@ def csv_to_html(csv_filename, output_folder):
                      <address>
                      2552 North Maple Road<br>
                      Ann Arbor, MI 48103<br><br>
-
+                    </address>
                      <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
                     Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i>  </a> 
 
@@ -128,6 +131,9 @@ def csv_to_html(csv_filename, output_folder):
         </body>
 </html>
 """
+        import re
+        html_content = re.sub(r'<time>', '<span class="time">', html_content)
+        html_content = re.sub(r'</time>', '</span>', html_content)
 
         # Save HTML content to a file in the meets folder
         with open(html_filename, 'w', encoding='utf-8') as htmlfile:
