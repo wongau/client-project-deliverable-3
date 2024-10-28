@@ -1,0 +1,279 @@
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #123142; /* Nice contrasting color */
+    color: #fff;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 a {
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+
+header h2 {
+    font-size: 1em;
+    margin: 0;
+    color: white;
+}
+
+/* Main Section Styling */
+main#main {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Adds space between links */
+}
+
+/* Link Styling */
+main#main a {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #042a3e; /* Matches header background color */
+    background-color: #e0f7fa;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+main#main a:hover {
+    background-color: #0077b6; /* Darker on hover */
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.summary button {
+    color: white; /* Text color */
+    background-color: #002143; /* Background color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
+    display: inline-block; /* Ensures padding and other properties apply correctly */
+    text-align: center; /* Center align text */
+}
+
+.summary button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.summary-text {
+    /* max-height: 100px; Set a maximum height to create the effect */
+    overflow: hidden; /* Hide overflowing content */
+    transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+.hidden {
+    display: none;
+}
+
+.more-content {
+    display: none; /* Ensure more content is hidden by default */
+}
+
+.read-more {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer on hover */
+    margin-top: 10px; /* Space above the button */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensure it behaves as an inline block element */
+}
+
+.read-more:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.athlete-container {
+    display: flex; /* Arrange athletes in a row */
+    padding: 10px; /* Optional: add padding for better spacing */
+}
+
+#individual-results .athlete {
+    min-width: 220px; /* Ensure each athlete takes up enough space */
+    margin-right: 15px; /* Optional: spacing between athlete entries */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    border-radius: 10px;
+}
+
+.athlete img {
+    border-radius: 50px;
+    width: 100%; /* Make the image fill the container */
+    height: 200px; /* Keep the aspect ratio */
+    object-fit: cover;
+}
+
+table {
+    overflow-x:auto;
+}
+
+#scroll-table {
+    overflow-x:auto;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#scroll-table:focus {
+    outline: 3px solid #007acc; /* Customize color and width as desired */
+    outline-offset: 2px;        /* Optional: add space between element and outline */
+    border-radius: 5px;
+}
+
+table {
+    width: 100%; /* Optional: adjust table width */
+    border-collapse: collapse; /* Optional: collapse borders for a cleaner look */
+}
+
+th, td {
+    padding: 8px; /* Add some padding */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add a border to table cells */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+tr:hover {
+    background-color: #d1e0e0; /* Optional: highlight row on hover */
+}
+
+#individual-results {
+    overflow: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of .athlete elements */
+    padding: 20px; /* Optional: add some padding around the section */
+    width: 100%; /* Allow the section to take full width */
+    max-width: 100%; /* Prevent overflow beyond the screen width */
+}
+
+#individual-results:focus {
+    outline: 3px solid #007acc; /* Customize color and width as desired */
+    outline-offset: 2px;        /* Optional: add space between element and outline */
+    border-radius: 5px;
+}
+
+#individual-results .athlete {
+    display: inline-block; /* Align .athlete elements in a row */
+    margin-right: 20px; /* Optional: space between athletes */
+    vertical-align: top; /* Align items at the top */
+    width: 20%;
+    padding: 10px; /* Add some padding for better spacing */
+}
+
+/* Even athlete divs */
+#individual-results .athlete:nth-child(even) {
+    background-color: lightgray; /* Light gray or any color you prefer */
+}
+
+/* Odd athlete divs */
+#individual-results .athlete:nth-child(odd) {
+    background-color: rgb(178, 166, 166); /* White or any color you prefer */
+}
+
+#individual-results .athlete dl {
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    margin: 0; /* Remove default margin */
+    width: 60%;
+}
+
+#individual-results .athlete dt {
+    margin-right: 10px; /* Space between dt and dd */
+    font-weight: bold; /* Optional: make dt bold */
+}
+
+#individual-results .athlete dd {
+    margin: 0; /* Remove default margin for dd */
+    margin-right: 20px; /* Space between dd elements */
+}
+
+#individual-results .athlete dd::after {
+    content: ""; /* Inserts an empty string */
+    display: block; /* Makes it a block element to force a line break */
+    margin: 10px 0; /* Optional: adds vertical space after the dd */
+}
+
+#individual-results .athlete figcaption {
+    font-weight: bold;
+    color: black;
+}
+
+footer {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    padding: 20px; /* Space inside the footer */
+    text-align: center; /* Center align text */
+    border-top: 1px solid #ccc; /* Light border at the top */
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 10px 0; /* Vertical space between paragraphs */
+}
+
+footer address {
+    font-style: normal; /* Remove italic from address */
+    margin: 10px 0; /* Vertical space around address */
+}
+
+footer a {
+    color: #013d7d; /* Blue color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #013d7d; /* Darker blue on hover */
+}
+
+footer .fa-brands {
+    margin-right: 5px; /* Space between icon and text */
+    color: #e1306c; /* Instagram color */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+    main#main a {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
