@@ -10,16 +10,18 @@
 </head>
 
 <body>
-    <a href="#main">Skip to Main Content</a>
-    <nav>
-        <ul>
-            <li><a href="/client-project-deliverable-3/">Home Page</a></li>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#team-results">Team Results</a></li>
-            <li><a href="#individual-results">Individual Results</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
-    </nav>
+    <div class="hamburger-menu">
+        <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+        <nav id="nav-menu" class="hidden">
+            <ul>
+                <li><a href="/client-project-deliverable-3/">Home Page</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#team-results">Team Results</a></li>
+                <li><a href="#individual-results">Individual Results</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </div>
     <header>
         <!--Meet Info-->
 
@@ -34,16 +36,16 @@
             <h2>Race Summary</h2>
             <p class="summary-text">Ann Arbor Skyline's JV girls team delivered an impressive 3rd place finish at the 56th Holly-Duane Raffin
                 Festival of Races, scoring 64 points and showcasing the team's depth and determination.</p>
-            <p class="summary-text hidden">Sophomore standout <span class="athlete">Gwen Stotts-Walshe</span> led the way, crossing the finish line
+            <p class="summary-text hidden" id="extra-content">Sophomore standout <span class="athlete">Gwen Stotts-Walshe</span> led the way, crossing the finish line
                 with a strong time of <span class="time">23:00.7</span>. Junior <span class="athlete">Tia
                     Cocciolone</span> followed closely behind, finishing in <span class="time">23:10.6</span>. Freshman
                 <span class="athlete">Elin Tenbrink</span> had a solid race as well, clocking in at <span
                     class="time">23:19.4</span>, contributing to the team’s close-knit pack.</p>
-            <p class="summary-text hidden">Junior <span class="athlete">Adrienne Stewart</span> finished with a time of <span
+            <p class="summary-text hidden" id="extra-content">Junior <span class="athlete">Adrienne Stewart</span> finished with a time of <span
                     class="time">23:31.1</span>, and freshman <span class="athlete">Violet Olley</span> rounded out the
                 top five for Skyline with a time of <span class="time">23:46.1</span>, helping secure Skyline's podium
                 spot.</p>
-            <p class="summary-text hidden">Overall, the team had a fantastic showing with tight finishes, proving that the JV squad has the
+            <p class="summary-text hidden" id="extra-content">Overall, the team had a fantastic showing with tight finishes, proving that the JV squad has the
                 potential to keep building toward even stronger performances in the future!</p>
             <button class="read-more" onclick="toggleContent()">Read More</button>
         </section>
@@ -433,14 +435,22 @@
             </div>
         </section>
 
-        <script> 
+        <script>
             function toggleContent() {
-                const hiddenTexts = document.querySelectorAll('.hidden');
-                hiddenTexts.forEach(text => {
-                    text.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide content
-                });
-
+                const extraText = document.getElementById('extra-content');
                 const button = document.querySelector('.read-more');
+            
+                extraText.classList.toggle('hidden');
+            
+                if (extraText.classList.contains('hidden')) {
+                    button.textContent = 'Read More';
+                } else {
+                    button.textContent = 'Read Less';
+                }
+            }
+            function toggleMenu() {
+                const navMenu = document.getElementById('nav-menu');
+                navMenu.classList.toggle('hidden');
             }
         </script>
     </main>

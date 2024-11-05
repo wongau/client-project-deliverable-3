@@ -10,16 +10,18 @@
 </head>
 
 <body>
-    <a href="#main">Skip to Main Content</a>
-    <nav>
-        <ul>
-            <li><a href="/client-project-deliverable-3/">Home Page</a></li>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#team-results">Team Results</a></li>
-            <li><a href="#individual-results">Individual Results</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
-    </nav>
+    <div class="hamburger-menu">
+        <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+        <nav id="nav-menu" class="hidden">
+            <ul>
+                <li><a href="/client-project-deliverable-3/">Home Page</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#team-results">Team Results</a></li>
+                <li><a href="#individual-results">Individual Results</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </div>
     <header>
         <!--Meet Info-->
 
@@ -35,15 +37,15 @@
             <p class="summary-text">Ann Arbor Skyline's Varsity girls team gave it their all at the 56th Holly-Duane Raffin Festival of
                 Races, finishing 8th overall with 204 points. The team faced tough competition but held their own
                 against some of the best in the state.</p>
-            <p class="summary-text hidden">Leading the way for Skyline was sophomore <span class="athlete">Irie Scrase</span>, who put up a stellar
+            <p class="summary-text hidden" id="extra-content">Leading the way for Skyline was sophomore <span class="athlete">Irie Scrase</span>, who put up a stellar
                 performance, crossing the line with a personal record of <span class="time">19:48.9</span>. Freshman
                 <span class="athlete">Elin Tenbrink</span> followed, clocking in at <span class="time">21:47.4</span>,
                 showing great promise for the future of Skyline’s team.</p>
-            <p class="summary-text hidden">Other notable finishes included sophomore <span class="athlete">Isla Tharp</span>, who crossed the line
+            <p class="summary-text hidden" id="extra-content">Other notable finishes included sophomore <span class="athlete">Isla Tharp</span>, who crossed the line
                 at <span class="time">21:52.3</span>, and sophomore <span class="athlete">Alison Kauffman</span> at
                 <span class="time">22:09.9</span>. Rounding out the top five was sophomore <span class="athlete">Mara
                     Mocanu</span> with a time of <span class="time">22:13.0</span>.</p>
-            <p class="summary-text hidden">Skyline’s runners demonstrated their resilience and determination as they competed against a tough field,
+            <p class="summary-text hidden" id="extra-content">Skyline’s runners demonstrated their resilience and determination as they competed against a tough field,
                 proving once again that they have the potential to rise through the ranks as the season progresses.</p>
             <button class="read-more" onclick="toggleContent()">Read More</button>
         </section>
@@ -248,15 +250,22 @@
             </div>
         </section>
 
-        <script> 
+        <script>
             function toggleContent() {
-                const hiddenTexts = document.querySelectorAll('.hidden');
-                hiddenTexts.forEach(text => {
-                    text.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide content
-                });
-
+                const extraText = document.getElementById('extra-content');
                 const button = document.querySelector('.read-more');
-                // button.textContent = button.textContent === 'Read More' ? 'Read Less' : 'Read More'; // Change button text
+            
+                extraText.classList.toggle('hidden');
+            
+                if (extraText.classList.contains('hidden')) {
+                    button.textContent = 'Read More';
+                } else {
+                    button.textContent = 'Read Less';
+                }
+            }
+            function toggleMenu() {
+                const navMenu = document.getElementById('nav-menu');
+                navMenu.classList.toggle('hidden');
             }
         </script>
     </main>

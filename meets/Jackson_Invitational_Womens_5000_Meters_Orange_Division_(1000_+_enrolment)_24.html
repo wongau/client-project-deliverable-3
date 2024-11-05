@@ -10,16 +10,18 @@
 </head>
 
 <body>
-    <a href="#main">Skip to Main Content</a>
-    <nav>
-        <ul>
-            <li><a href="/client-project-deliverable-3/">Home Page</a></li>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#team-results">Team Results</a></li>
-            <li><a href="#individual-results">Individual Results</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
-    </nav>
+    <div class="hamburger-menu">
+        <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+        <nav id="nav-menu" class="hidden">
+            <ul>
+                <li><a href="/client-project-deliverable-3/">Home Page</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#team-results">Team Results</a></li>
+                <li><a href="#individual-results">Individual Results</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </div>
     <header>
         <!--Meet Info-->
 
@@ -36,11 +38,11 @@
                 grit and determination despite the fact that most of us were still rolling out of bed. Racing in the
                 cool morning air, the girls gave it their all and finished a solid 19th out of 29 teams—proof that
                 Skyline doesn’t just rise early, they rise to the occasion.</p>
-            <p class="summary-text hidden">Leading the team was <span class="athlete">Becca Van Lent</span>, who powered through the course to
+            <p class="summary-text hidden" id="extra-content">Leading the team was <span class="athlete">Becca Van Lent</span>, who powered through the course to
                 finish with a time of <span class="time">19:57.87</span>, setting the pace for her teammates. Not far
                 behind was <span class="athlete">Isla Tharp</span>, clocking in at <span class="time">20:12.31</span>
                 with a personal record, and she certainly earned her spot at the breakfast table.</p>
-            <p class="summary-text hidden">Continuing the strong effort, <span class="athlete">Lila Edison</span> crossed the finish line with a
+            <p class="summary-text hidden" id="extra-content">Continuing the strong effort, <span class="athlete">Lila Edison</span> crossed the finish line with a
                 personal best of <span class="time">20:46.19</span>, while <span class="athlete">Alison Kauffman</span>
                 made her mark with a time of <span class="time">21:38.28</span>. The pack was rounded out by <span
                     class="athlete">Mara Mocanu</span>, who finished in <span class="time">21:40.87</span>, securing
@@ -343,15 +345,22 @@
             </div>
         </section>
 
-        <script> 
+        <script>
             function toggleContent() {
-                const hiddenTexts = document.querySelectorAll('.hidden');
-                hiddenTexts.forEach(text => {
-                    text.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide content
-                });
-
+                const extraText = document.getElementById('extra-content');
                 const button = document.querySelector('.read-more');
-                // button.textContent = button.textContent === 'Read More' ? 'Read Less' : 'Read More'; // Change button text
+            
+                extraText.classList.toggle('hidden');
+            
+                if (extraText.classList.contains('hidden')) {
+                    button.textContent = 'Read More';
+                } else {
+                    button.textContent = 'Read Less';
+                }
+            }
+            function toggleMenu() {
+                const navMenu = document.getElementById('nav-menu');
+                navMenu.classList.toggle('hidden');
             }
         </script>
     </main>

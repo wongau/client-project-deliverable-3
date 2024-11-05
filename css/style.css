@@ -34,6 +34,47 @@ header h2 {
     color: white;
 }
 
+/* Style the hamburger icon */
+.hamburger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    color: white;
+}
+
+.hamburger-icon {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+/* Hidden class to toggle visibility */
+.hidden {
+    display: none;
+}
+
+/* Style the nav menu */
+#nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu ul li {
+    padding: 10px 0;
+}
+
+/* Position and style for nav menu in mobile view */
+#nav-menu {
+    background-color: white;
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    width: 150px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Main Section Styling */
 main#main {
     width: 90%;
