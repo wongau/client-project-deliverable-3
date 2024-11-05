@@ -13,7 +13,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #123142; /* Nice contrasting color */
+    background-color: #123142;
     color: #fff;
     width: 100%;
     padding: 20px 0;
@@ -263,17 +263,66 @@ footer .fa-brands {
     color: #e1306c; /* Instagram color */
 }
 
-/* Responsive styling */
-@media (max-width: 600px) {
-    footer {
-        font-size: 14px; /* Smaller font size on mobile */
+/* Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212; /* Dark background */
+        /* color: #e0e0e0;  */
     }
-}
 
-/* Responsive Layout */
-@media (max-width: 600px) {
+    header {
+        background-color: #1c1c1c; /* Darker header */
+        color: #ffffff;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    a {
+        color: white;
+    }
+
     main#main a {
-        font-size: 1em;
-        padding: 10px 15px;
+        color: #e0f7fa; /* Light text */
+        background-color: #003c4f; /* Darker background */
+    }
+
+    main#main a:hover {
+        background-color: #0077b6; /* Slightly lighter on hover */
+        color: #ffffff;
+    }
+
+    .summary button {
+        background-color: #333333; /* Dark button */
+    }
+
+    .summary button:hover {
+        background-color: #555555; /* Slightly lighter on hover */
+    }
+
+    .summary-text {
+        color: white;
+    }
+
+    .read-more {
+        background-color: #444444; /* Dark button */
+    }
+
+    .read-more:hover {
+        background-color: #666666; /* Slightly lighter on hover */
+    }
+
+    footer {
+        background-color: #1a1a1a; /* Dark footer background */
+        color: #cccccc; /* Light footer text */
+    }
+
+    footer a {
+        color: #77bdf7; /* Light blue link color */
+    }
+
+    footer a:hover {
+        color: #9eddfd; /* Lighter blue on hover */
     }
 }
