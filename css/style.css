@@ -263,6 +263,15 @@ footer .fa-brands {
     color: #e1306c; /* Instagram color */
 }
 
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .animated-element {
+      /* Disable animations and transitions */
+      transition: none;
+      animation: none;
+    }
+  }
+
 /* Dark Mode Preference */
 @media (prefers-color-scheme: dark) {
     body {
