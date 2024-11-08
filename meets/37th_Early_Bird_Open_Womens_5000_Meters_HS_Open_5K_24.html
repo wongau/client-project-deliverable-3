@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>37th Early Bird Open Womens 5000 Meters HS Open 5K</title>
+    <link rel="stylesheet" href="/dist/css/lightbox.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -24,7 +25,6 @@
     </div>
     <header>
         <!--Meet Info-->
-
         <h1>
             <a href="https://www.athletic.net/CrossCountry/meet/235827/results/943368">37th Early Bird Open Womens 5000
                 Meters HS Open 5K</a>
@@ -138,10 +138,12 @@
         <section id="individual-results" aria-labelledby="results-heading" tabindex="0">
             <h2 id="results-heading">Individual Results</h2>
             <div class="athlete" role="region">
-                <figure>
-                    <img src="../images/profiles/26328690.jpg" width="200" alt="Profile picture of Lucia Llanes">
-                    <figcaption>Lucia Llanes</figcaption>
-                </figure>
+                <a href="../images/profiles/26328690.jpg" data-lightbox="athlete">
+                    <figure>
+                        <img src="../images/profiles/26328690.jpg" width="200" alt="Profile picture of Lucia Llanes">
+                        <figcaption>Lucia Llanes</figcaption>
+                    </figure>
+                </a>
                 <dl>
                     <dt>Place</dt>
                     <dd>8.</dd>
@@ -378,6 +380,7 @@
             </div>
         </section>
         
+        <script src="/dist/js/lightbox-plus-jquery.js"></script>
         <script>
             function toggleContent() {
                 const extraText = document.getElementById('extra-content');
@@ -395,7 +398,6 @@
                 const navMenu = document.getElementById('nav-menu');
                 navMenu.classList.toggle('hidden');
             }
-
         </script>
     </main>
     <footer>
