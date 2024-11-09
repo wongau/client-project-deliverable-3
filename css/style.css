@@ -115,6 +115,14 @@ main#main a:hover {
     transform: scale(1.05);
 }
 
+section#individual-results a {
+    background-color: transparent;
+}
+
+section#individual-results a:hover {
+    background-color: transparent;
+}
+
 .summary button {
     color: white; /* Text color */
     background-color: #002143; /* Background color */
