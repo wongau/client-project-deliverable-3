@@ -228,6 +228,10 @@ tr:hover {
     background-color: #d1e0e0; /* Optional: highlight row on hover */
 }
 
+@media (min-width: 800px) {
+    
+}
+
 #individual-results {
     overflow: auto;
     overflow-x: auto; /* Enable horizontal scrolling */
@@ -349,7 +353,7 @@ footer .fa-brands {
     }
 
     a {
-        color: white;
+        color: black;
     }
 
     main#main a {
@@ -359,7 +363,15 @@ footer .fa-brands {
 
     main#main a:hover {
         background-color: #0077b6; /* Slightly lighter on hover */
-        color: #ffffff;
+        color: black;
+    }
+
+    section#individual-results a {
+        background-color: transparent;
+    }
+
+    section#individual-results a:hover {
+        background-color: transparent;
     }
 
     .summary button {
