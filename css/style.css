@@ -44,12 +44,12 @@ header h2 {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for shading */
     padding: 10px; /* Space around the icon */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds depth */
     display: flex; /* Keeps it close-fitting around the icon */
     align-items: center; /* Vertically centers the icon */
     justify-content: center;
     height: 40px;
     width: 40px;
+    
 }
 
 /* Style the hamburger icon */
@@ -57,6 +57,36 @@ header h2 {
     font-size: 40px;
     color: white;
     cursor: pointer;
+    background: none; /* Remove default button styling */
+    border: none;     /* Remove default button border */
+    font-size: 24px;  /* Adjust font size */
+    cursor: pointer;  /* Show pointer cursor */
+    padding: 10px;    /* Add some padding */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.hamburger-icon:hover {
+    color: #007bff; /* Color on hover (e.g., blue) */
+}
+
+.hamburger-icon:active {
+    color: #0056b3; /* Color when active (e.g., darker blue) */
+}
+
+.hamburger-icon:focus {
+    outline: 2px solid #007bff; /* Visible focus outline for accessibility */
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 /* Hidden class to toggle visibility */
