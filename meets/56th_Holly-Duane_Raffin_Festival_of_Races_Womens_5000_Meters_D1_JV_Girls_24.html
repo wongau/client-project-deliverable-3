@@ -12,7 +12,10 @@
 
 <body>
     <div class="hamburger-menu">
-        <span class="hamburger-icon" onclick="toggleMenu()">☰</span>
+        <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="nav-menu">
+            ☰
+            <span class="sr-only">Toggle navigation menu</span> <!-- Screen reader text -->
+        </button>
         <nav id="nav-menu" class="hidden">
             <ul>
                 <li><a href="/client-project-deliverable-3/">Home Page</a></li>
@@ -391,9 +394,16 @@
                     button.textContent = 'Read Less';
                 }
             }
+        </script>
+        <script>
             function toggleMenu() {
-                const navMenu = document.getElementById('nav-menu');
-                navMenu.classList.toggle('hidden');
+                const menu = document.getElementById('nav-menu');
+                const button = document.querySelector('.hamburger-icon');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                button.setAttribute('aria-expanded', !isExpanded);
+                menu.classList.toggle('hidden');
+                menu.setAttribute('aria-hidden', isExpanded);
             }
         </script>
     </main>
