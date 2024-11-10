@@ -197,12 +197,31 @@ table {
     overflow-x:auto;
     overflow: auto;
     white-space: nowrap;
+    display: flex;
+    /* gap: 20px; */
+    flex-direction: column;
+}
+
+#scroll-table:table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 #scroll-table:focus {
     outline: 3px solid #007acc; /* Customize color and width as desired */
     outline-offset: 2px;        /* Optional: add space between element and outline */
     border-radius: 5px;
+}
+
+@media (min-width: 800px) {
+    #scroll-table {
+        flex-direction: row; /* Switch to two columns */
+        gap: 20px; /* Space between tables */
+    }
+    
+    #scroll-table table {
+        width: 50%; /* Each table takes half the width */
+    }
 }
 
 table {
@@ -229,7 +248,11 @@ tr:hover {
 }
 
 @media (min-width: 800px) {
-    
+    footer {
+        width: 80%;
+    }
+
+
 }
 
 #individual-results {
